@@ -1,0 +1,51 @@
+.slider {
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
+}
+
+.slider .list {
+    display: flex;
+    gap: 10px;
+    width: calc(var(--width) * var(--quantity));
+    animation: scrollAnimation 20s linear infinite; /* Animate the entire list */
+}
+
+.slider .list .item {
+    flex: 0 0 var(--width); /* Ensures each item has fixed width */
+    height: var(--height);
+    transition: filter 0.5s;
+}
+
+.slider .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the item area */
+}
+
+@keyframes scrollAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-1 * var(--width) * var(--quantity)));
+    }
+}
+
+.slider:hover .list {
+    animation-play-state: paused!important;
+}
+
+.slider .item {
+    filter: grayscale(1);
+}
+
+.slider .item:hover {
+    filter: grayscale(0);
+}
