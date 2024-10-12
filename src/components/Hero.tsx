@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import  { useRef } from 'react'
 import Countainer from './Countainer'
 import Btn from './Btn'
 import { motion, useScroll, useTransform } from 'framer-motion'

@@ -1,4 +1,3 @@
-import React from 'react'
 import Countainer from './Countainer'
 import FadIn from './FadIn'
 
